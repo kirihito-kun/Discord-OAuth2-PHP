@@ -34,7 +34,11 @@ class OAuth2 {
     public function getGuildsInformation() {
         return $this->getInformation('users/@me/guilds');
     }
-
+    public functionaddUserGuild($uid) {
+        if($this->_accessToken === null) {
+            $response = $this->loadToken();
+        }
+    }
     private function getInformation($endpoint) {
         if ($this->_accessToken === null) {
             $response = $this->loadToken();
